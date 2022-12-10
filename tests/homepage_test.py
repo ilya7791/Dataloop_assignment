@@ -3,7 +3,6 @@ from pages.login_page import LoginPage
 from params.parameters import TestParams
 from tests.base_test import BaseTest
 
-
 class TestHomePage(BaseTest):
     ITEMS_TO_SCAN = 20
 

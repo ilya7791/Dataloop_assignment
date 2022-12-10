@@ -1,9 +1,8 @@
+import random
 import subprocess
-
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
-
 
 class BasePage:
     def __init__(self, driver):
@@ -69,3 +68,8 @@ def convert_list_to_lowercase(items):
     for item in items:
         new_list.append(item.lower())
     return new_list
+
+def get_random_num(min,max):
+    rand_num = random.randint(min, max)
+    print(f"rand_num: {rand_num}")
+    return rand_num
