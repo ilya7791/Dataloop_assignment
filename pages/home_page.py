@@ -3,7 +3,7 @@ import time
 
 from selenium.webdriver.common.by import By
 
-from pages.base_page import BasePage
+from pages.base_page import BasePage, get_random_num
 from params.parameters import TestParams
 
 
@@ -19,7 +19,7 @@ class HomePage(BasePage):
         self.panorama_filter = (By.CSS_SELECTOR, "[data-orientation-value='panorama']")
         self.items = (By.CSS_SELECTOR, "[class='view photo-list-view']>*")
         self.title_view = (By.CSS_SELECTOR, "[data-layout-style='til']")
-        self.random_item = (By.CSS_SELECTOR, f"[class='view photo-list-view']>:nth-child({random.randint(20, 20)}")
+        self.random_item = (By.CSS_SELECTOR, f"[class='view photo-list-view']>:nth-child({get_random_num(1,20)}")
         self.item_title_in_gallery = (By.CSS_SELECTOR, "[class='metadata']>:nth-child(1)")
         self.item_user_in_gallery = (By.CSS_SELECTOR, "[class='metadata']>:nth-child(2)")
 

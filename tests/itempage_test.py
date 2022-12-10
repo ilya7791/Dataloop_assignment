@@ -14,13 +14,13 @@ class TestItemPage(BaseTest):
         login.perform_login(TestParams.USERNAME, TestParams.PASSWORD)
         home.search_tag(TestParams.TAG_TO_SEARCH)
         home.click_title_view()
-        image = home.get_random_item()
-        item_title_in_gallery = image.find_element(By.CSS_SELECTOR, "[class='metadata']>:nth-child(1)").text
-        item_user_in_gallery = image.find_element(By.CSS_SELECTOR, " [class='metadata']>:nth-child(2)").text.replace(
+        rand_item = home.get_random_item()
+        item_title_in_gallery = rand_item.find_element(By.CSS_SELECTOR, "[class='metadata']>:nth-child(1)").text
+        item_user_in_gallery = rand_item.find_element(By.CSS_SELECTOR, " [class='metadata']>:nth-child(2)").text.replace(
             "by ", "")
-        item_stars_count_in_gallery = image.find_element(By.CSS_SELECTOR, "[class='engagement']>:nth-child(1)").text
-        item_comments_count_in_gallery = image.find_element(By.CSS_SELECTOR, "[class='engagement']>:nth-child(2)").text
-        image.find_element(By.CSS_SELECTOR, "a").click()
+        item_stars_count_in_gallery = rand_item.find_element(By.CSS_SELECTOR, "[class='engagement']>:nth-child(1)").text
+        item_comments_count_in_gallery = rand_item.find_element(By.CSS_SELECTOR, "[class='engagement']>:nth-child(2)").text
+        rand_item.find_element(By.CSS_SELECTOR, "a").click()
         item_stars_count_in_item_page = item_page.get_item_stars_count_in_item_page()
         item_comments_count_in_item_page = item_page.get_item_comments_count_in_item_page()
         item_user_and_galleryin_item_page = item_page.get_item_user_and_gallery_in_item_page()
